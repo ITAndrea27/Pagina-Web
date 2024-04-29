@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accedi</title>
+  <link rel="stylesheet" type="text/css" href="/CSS/stili.css">
+</head>
+<body style="background-image: url('bosco.jpg');">
+  <div class="login-container">
+    <h1>RENT GREEN MOBILITY</h1>
+    <form action="elabora.php" method="POST">
+      <div class="form-group">
+        <label for="username_or_email">Username o Email:</label>
+        <input type="text" id="username_or_email" name="username_or_email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" name="login_button" value="Accedi" class="green-button">
+      </div>
+      <input type="hidden" name="from_page" value="login">
+    </form>
+    <p>Non hai un account? <a href="registrazione.html">Registrati qui</a></p>
+  </div>
+</body>
+</html>
