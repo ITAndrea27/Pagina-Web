@@ -6,38 +6,69 @@
   <title>Registrati</title>
   <link rel="stylesheet" type="text/css" href="/CSS/stili.css">
 </head>
-<body style="background-image: url('');">
+<body>
   <div class="login-container">
-    <h1>RENT GREEN MOBILITY</h1>
+    <h1>Registrati</h1>
 
     <form action="elabora.php" method="POST">
       <div class="form-group">
-        <label>Nome:</label>
-        <input type="text" id="first_name" name="first_name">
+        <div class="icon-text-input">
+          <input type="text" id="first_name" name="first_name">
+          <span class="input-text">Nome</span>
+        </div>
       </div>
       <div class="form-group">
-        <label>Cognome:</label>
-        <input type="text" id="last_name" name="last_name">
+        <div class="icon-text-input">
+          <input type="text" id="last_name" name="last_name">
+          <span class="input-text">Cognome</span>
+        </div>
       </div>
       <div class="form-group">
-        <label>Email:</label>
-        <input type="email" id="email" name="email" required>
+        <div class="icon-text-input">
+          <input type="text" id="username" name="username">
+          <span class="input-text">Username</span>
+        </div>
       </div>
       <div class="form-group">
-        <label>Username:</label>
-        <input type="text" id="username" name="username">
+        <div class="icon-text-input">
+          <input type="email" id="email" name="email" required>
+          <span class="input-text">Email</span>
+        </div>
       </div>
       <div class="form-group">
-        <label>Password:</label>
-        <input type="password" id="password" name="password" required>
+        <div class="icon-text-input">
+          <input type="password" id="password" name="password" required>
+          <span class="input-text">Password</span>
+        </div>
       </div>
       <div class="form-group">
         <input type="submit" name="register_button" value="Registrati" class="green-button">
       </div>
       <input type="hidden" name="from_page" value="register">
     </form>
-
+    <p style="color: #fff; font-weight: bold" >* campi obbligatori</p>
     <p>Hai già un account? <a href="accedi.html">Accedi qui</a></p>
   </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const inputs = document.querySelectorAll('.icon-text-input input');
+      inputs.forEach(input => {
+        const inputText = input.nextElementSibling;
+
+        input.addEventListener('input', function() {
+          if (this.value === '') {
+            inputText.style.opacity = '1';
+          } else {
+            inputText.style.opacity = '0';
+          }
+        });
+
+        // Mostra il testo di sfondo quando la pagina viene caricata se l'input è vuoto
+        if (input.value === '') {
+          inputText.style.opacity = '1';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $_POST["password"];
 
         // Esegui la query per recuperare l'utente dal database
-        $stmt = $db->prepare("SELECT * FROM P_Utente WHERE email = ?");
-        $stmt->bind_param("s", $email);
+        $stmt = $db->prepare("SELECT * FROM P_Utente WHERE email = ? AND password = ?");
+        $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
         $risultato = $stmt->get_result();
 
@@ -58,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
 
             // Utente non trovato
+            
             echo "Utente non trovato.";
         }
 

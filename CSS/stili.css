@@ -1,21 +1,28 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .login-container {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/Elementi/immagini/bosco.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-container {
+  background-color: transparent;
+  color: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  text-align: center;
+}
+
   .login-container h1 {
     margin-top: 0;
     margin-bottom: 20px;
@@ -27,28 +34,84 @@ body {
   
   .form-group label {
     display: block;
-    font-weight: bold;
+    text-align: left;
+    color: #fff;
   }
   
   .form-group input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 20px;
     box-sizing: border-box;
+    color: #fff; /* Testo bianco */
+    
   }
   
   .green-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 16px;
+    background-color: white !important; /* Sfondo bianco */
+    color: black !important; /* Testo nero */
+    font-weight: bold !important; /* Peso del carattere normale di default */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Aggiunge una transizione al cambiamento di colore */
   }
   
+  /* Cambia lo stile quando il cursore passa sopra il pulsante */
   .green-button:hover {
-    background-color: #45a049;
+    background-color: transparent !important; /* Sfondo trasparente */
+    color: white !important; /* Testo bianco */
+    font-weight: bold; /* Peso del carattere in grassetto */
   }
   
+  .icon-text-input {
+    position: relative;
+  }
+  
+  .icon-text-input input {
+    padding-right: 30px; /* Spazio per l'icona */
+    padding-left: 10px; /* Spazio per il testo */
+    transition: border-color 0.3s ease; /* Aggiunge una transizione al cambiamento del colore del bordo */
+    font-weight: normal; /* Imposta il peso del carattere a normale di default */
+  }
+  
+  /* Cambia il peso del carattere quando l'input è in focus */
+  .icon-text-input input:focus {
+    font-weight: bold; /* Imposta il peso del carattere a bold */
+    border-color: white; /* Colore del bordo durante il focus */
+  }
+  
+  
+  .icon-text-input .input-icon {
+    position: absolute;
+    right: 10px; /* Posizione dell'icona rispetto alla fine dell'input */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Dimensioni dell'icona */
+    height: 20px;
+  }
+  
+  .icon-text-input .input-text {
+    position: absolute;
+    left: 10px; /* Posizione del testo rispetto all'inizio dell'input */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffffaf; /* Colore del testo */
+    pointer-events: none; /* Permette al clic di passare attraverso il testo */
+    transition: opacity 0.3s ease; /* Aggiunge un effetto di dissolvenza al testo */
+  }
+  
+  /* Nasconde il testo quando l'input ha del testo */
+  .icon-text-input input:focus + .input-text,
+  .icon-text-input input:not(:placeholder-shown) + .input-text {
+    opacity: 0;
+  }
+  
+  a {
+    color: white; /* Colore del testo bianco */
+    font-weight: bold; /* Grassetto */
+    text-decoration: none; /* Rimuove il sottolineato predefinito */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Aggiunge sottolineato quando il link è in hover */
+  }
