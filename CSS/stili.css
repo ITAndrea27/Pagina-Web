@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: ui-rounded;
   margin: 0;
   padding: 0;
   display: flex;
@@ -47,6 +47,7 @@ body {
     box-sizing: border-box;
     color: #fff; /* Testo bianco */
     
+    
   }
   
   .green-button {
@@ -72,6 +73,7 @@ body {
     padding-left: 10px; /* Spazio per il testo */
     transition: border-color 0.3s ease; /* Aggiunge una transizione al cambiamento del colore del bordo */
     font-weight: normal; /* Imposta il peso del carattere a normale di default */
+    outline-color: transparent;
   }
   
   /* Cambia il peso del carattere quando l'input è in focus */
